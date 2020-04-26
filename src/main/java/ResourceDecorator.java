@@ -8,8 +8,8 @@ public abstract class ResourceDecorator implements Resource {
         this.decRes = r;
     }
     
-    public void generateIncome() {
-        decRes.generateIncome();
+    public int generateIncome() {
+        return decRes.generateIncome();
     }
     
 

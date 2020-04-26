@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,15 +13,30 @@ public class Main {
         DayEvents dayEvents = new DayEvents();
         NightEvents nightEvents = new NightEvents();
         
+        //add observers
+        farm.addObserver(dayEvents);
+        farm.addObserver(nightEvents);       
         
-        AbstractFactory animalFactory = FactoryProducer.getFactory(true);
-        AbstractFactory cropFactory = FactoryProducer.getFactory(false);
+        //Add 3 initial farmers
+        farm.addFarmer(new Farmer());
+        farm.addFarmer(new Farmer());
+        farm.addFarmer(new Farmer());
         
-        Resource cow = animalFactory.getResource("cow");
-        Resource corn = cropFactory.getResource("corn");
+        //Add 3 initial resources
+        farm.addResource(ResourceGenerator.generateResource());
+        farm.addResource(ResourceGenerator.generateResource());
+        farm.addResource(ResourceGenerator.generateResource());
         
-        cow.generateIncome();
-        corn.generateIncome();
+        
+        //start simulation loop
+        while(farm.upgrade() != true && farm.bankrupt()!= true) {
+            
+        }
+        
+        
+
+        
+
 
     }
 

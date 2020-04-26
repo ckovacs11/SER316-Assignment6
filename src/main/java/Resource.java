@@ -4,6 +4,6 @@ package main.java;
 public interface Resource {
     
     
-    void generateIncome();
+    int generateIncome();
 
 }

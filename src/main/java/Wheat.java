@@ -2,9 +2,9 @@ package main.java;
 
 public class Wheat implements Resource {
     
-    public void generateIncome() {
+    public int generateIncome() {
         
-        System.out.println("wheat generates income");
+        return 50;
         
     }
 

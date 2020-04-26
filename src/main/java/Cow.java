@@ -2,9 +2,9 @@ package main.java;
 
 public class Cow implements Resource {
     
-    public void generateIncome() {
+    public int generateIncome() {
         
-        System.out.println("cow generates income");
+        return 100;
         
     }
 
