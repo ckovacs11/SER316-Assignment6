@@ -30,10 +30,17 @@ public class CornDecorator extends ResourceDecorator {
         if(this.attribute.equalsIgnoreCase("average")){
             return decRes.generateIncome();
         } else if(this.attribute.equalsIgnoreCase("dent")) {
-            return decRes.generateIncome() - 20;
+            System.out.println("Farmers have harvested ears of dent corn for 60 dollars of income");
+            return 60;
         } else {
-            return decRes.generateIncome() + 20;
+            System.out.println("Farmers have harvested ears of sweet corn for 100 dollars of income");
+            return 100;
         }
+    }
+    
+    @Override
+    public String getAttribute() {
+        return this.attribute;
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class HorseDecorator extends ResourceDecorator {
     
-    String attribute;
+    public String attribute;
     
     public HorseDecorator(Resource decRes) {
         super(decRes);
@@ -26,13 +26,26 @@ public class HorseDecorator extends ResourceDecorator {
     public int generateIncome() {
         
         //TODO RNG for fast or slow horse
+        if(decRes.generateIncome() == 1) {
         if(this.attribute.equalsIgnoreCase("average")){
-            return decRes.generateIncome();
+            System.out.println("The farm's average horse generated 150 in income from a horse race.");
+            return 150;
         } else if(this.attribute.equalsIgnoreCase("slow")) {
-            return decRes.generateIncome() - 30;
+            System.out.println("The farm's slow horse generated a measly 120 dollars in income from a horse race.");                       
+                return 120;            
+            
         } else {
-            return decRes.generateIncome() + 30;
+            System.out.println("The farm's fast horse generated 180 dollars in income by winning a horse race!");    
+            return 180; 
         }
+        } else {
+            System.out.println("One of the farm's horses is resting in preperation for the next race.");
+            return 0;
+        }
+    }
+    @Override
+    public String getAttribute() {
+        return this.attribute;
     }
 
 }

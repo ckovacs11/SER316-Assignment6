@@ -29,10 +29,17 @@ public class SheepDecorator extends ResourceDecorator {
         if(this.attribute.equalsIgnoreCase("average")){
             return decRes.generateIncome();
         } else if(this.attribute.equalsIgnoreCase("small")) {
-            return decRes.generateIncome() - 10;
+            System.out.println("Farmers have sheered a small sheep for 40 dollars of income");
+            return 40;
         } else {
-            return decRes.generateIncome() + 10;
+            System.out.println("Farmers have sheered a large sheep for 60 dollars of income");
+            return 60;
         }
+    }
+    
+    @Override
+    public String getAttribute() {
+        return this.attribute;
     }
 
 }

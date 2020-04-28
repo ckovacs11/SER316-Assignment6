@@ -5,5 +5,8 @@ public interface Resource {
     
     
     int generateIncome();
+    String getAttribute();
+    
+    
 
 }

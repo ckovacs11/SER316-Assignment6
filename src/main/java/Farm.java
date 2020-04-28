@@ -10,22 +10,27 @@ public class Farm extends Observable {
     ArrayList<Farmer> farmers;
     private int dollars;
     private boolean daytime;
-    private int timeCount;
     private boolean bankrupt;
     private boolean upgraded;
     private static int upgradeCost = 1000;
+    private boolean weevilProtection;
+    private int farmerBonus;
+    private int day;
     
     
     
     public Farm() {
         
-        this.dollars = 0;
+        this.dollars = 50;
         this.daytime = true;
-        this.timeCount = 0;
         this.bankrupt = false;
         this.upgraded = false;
         this.farmers = new ArrayList<Farmer>();
         this.resources = new ArrayList<Resource>();
+        this.weevilProtection = false;
+        this.farmerBonus = 0;
+        this.day = 1;
+        
         System.out.println("A new farm has been created.");
         
     }
@@ -40,7 +45,7 @@ public class Farm extends Observable {
         this.daytime = daytime;
         setChanged();
         notifyObservers();
-        this.timeCount++;
+        
     }
     
     public int getDollars() {
@@ -52,12 +57,14 @@ public class Farm extends Observable {
     }
     
     public void income(int i) {
-        this.dollars += this.dollars + i;
+        this.dollars += i;
+        
     }
     
     public boolean bankrupt() {
         if(dollars <= 0) {
-            this.bankrupt = true;            
+            this.bankrupt = true;  
+            System.out.println("Your farm has gone bankrupt!");
         }
         
         return bankrupt;
@@ -65,8 +72,9 @@ public class Farm extends Observable {
     }
     
     public boolean upgrade() {
-        if(dollars >= 1200) {
+        if(dollars >= 1500) {
             this.upgraded = true;
+            System.out.println("Your farm has been upgraded!");
         }
         
         return upgraded;
@@ -89,7 +97,49 @@ public class Farm extends Observable {
         return farmers;
     }
     
+    public int getFarmerBonus() {
+        return this.farmerBonus;
+    }
     
+    public void addFarmerBonus(int i) {
+        if(i != -1) {
+            this.farmerBonus += i;
+        }
+        else {
+           this.weevilProtection = true; 
+        }
+        
+        
+    }
+    
+    public void farmerIncome() {
+        this.dollars += this.farmerBonus;
+    }
+    
+    public String getPhase() {
+        if(this.daytime == true) {
+            return "Daytime";
+        }
+        else {
+            return "Nighttime";
+        }
+    }
+    
+    public int getDay() {
+        return this.day;
+    }
+    
+    public void incrementDay() {
+        this.day++;
+    }
+    
+    public boolean getWeevilProtection() {
+        return this.weevilProtection;
+    }
+    
+    public void lostIncome(int i) {
+        this.dollars -= i;
+    }
     
 
 }
