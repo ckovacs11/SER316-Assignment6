@@ -8,6 +8,7 @@ public class Corn implements Resource {
         return 80;
         
     }
+    
     public String getAttribute() {
         return "";
     }

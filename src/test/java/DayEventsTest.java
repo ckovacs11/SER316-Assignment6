@@ -1,12 +1,12 @@
 package test.java;
 
-import static org.junit.Assert.*;
-
-
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import main.java.DayEvents;
 import main.java.Farm;
+import org.junit.Test;
+
+
 
 public class DayEventsTest {
     

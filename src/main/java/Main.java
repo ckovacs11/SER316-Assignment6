@@ -29,7 +29,7 @@ public class Main {
         
         
         //start simulation loop
-        while(farm.upgrade() != true && farm.bankrupt()!= true) {
+        while (farm.upgrade() != true && farm.bankrupt() != true) {
             System.out.println("=====================");
             System.out.println("Day: " + farm.getDay() + " Daytime");
             
@@ -45,7 +45,8 @@ public class Main {
             
             
             
-            System.out.println("The farm has " + farm.getDollars() + " dollars after the day's events"); 
+            System.out.println("The farm has " + farm.getDollars()
+                + " dollars after the day's events"); 
         }
         
         

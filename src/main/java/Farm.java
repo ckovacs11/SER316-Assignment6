@@ -1,7 +1,8 @@
 package main.java;
 
-import java.util.Observable;
 import java.util.ArrayList;
+import java.util.Observable;
+
 
 
 public class Farm extends Observable {
@@ -12,7 +13,6 @@ public class Farm extends Observable {
     private boolean daytime;
     private boolean bankrupt;
     private boolean upgraded;
-    private static int upgradeCost = 1000;
     private boolean weevilProtection;
     private int farmerBonus;
     private int day;
@@ -62,7 +62,7 @@ public class Farm extends Observable {
     }
     
     public boolean bankrupt() {
-        if(dollars <= 0) {
+        if (dollars <= 0) {
             this.bankrupt = true;  
             System.out.println("Your farm has gone bankrupt!");
         }
@@ -72,7 +72,7 @@ public class Farm extends Observable {
     }
     
     public boolean upgrade() {
-        if(dollars >= 1500) {
+        if (dollars >= 1500) {
             this.upgraded = true;
             System.out.println("Your farm has been upgraded!");
         }
@@ -102,11 +102,11 @@ public class Farm extends Observable {
     }
     
     public void addFarmerBonus(int i) {
-        if(i != -1) {
+        if (i != -1) {
             this.farmerBonus += i;
-        }
-        else {
-           this.weevilProtection = true; 
+        
+        } else {            
+            this.weevilProtection = true; 
         }
         
         
@@ -117,10 +117,9 @@ public class Farm extends Observable {
     }
     
     public String getPhase() {
-        if(this.daytime == true) {
+        if (this.daytime == true) {
             return "Daytime";
-        }
-        else {
+        } else {
             return "Nighttime";
         }
     }

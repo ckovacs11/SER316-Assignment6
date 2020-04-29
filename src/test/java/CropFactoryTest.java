@@ -1,14 +1,12 @@
 package test.java;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
-
-import org.junit.Test;
-
-import main.java.AbstractFactory;
+import main.java.CropFactory;
 import main.java.FactoryProducer;
 import main.java.Resource;
-import main.java.CropFactory;
+import org.junit.Test;
+
 
 
 public class CropFactoryTest {

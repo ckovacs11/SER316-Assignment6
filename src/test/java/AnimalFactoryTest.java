@@ -1,14 +1,14 @@
 package test.java;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
-
-import org.junit.Test;
-
-import main.java.AbstractFactory;
+import main.java.AnimalFactory;
 import main.java.FactoryProducer;
 import main.java.Resource;
-import main.java.AnimalFactory;
+import org.junit.Test;
+
+
+
 
 
 public class AnimalFactoryTest {

@@ -12,13 +12,18 @@ public class SheepDecorator extends ResourceDecorator {
         Random rand = new Random();
         int randInt = rand.nextInt(3);
         
-        switch(randInt) {
-        case 0:
-            this.attribute = "average";
-        case 1:
-            this.attribute = "small";
-        case 2:
-            this.attribute = "large";
+        switch (randInt) {
+            case 0:
+                this.attribute = "average";
+                break;
+            case 1:
+                this.attribute = "small";
+                break;
+            case 2:
+                this.attribute = "large";
+                break;
+            default:
+                break;
         }
     }
     
@@ -26,9 +31,9 @@ public class SheepDecorator extends ResourceDecorator {
     public int generateIncome() {
         
         //TODO RNG for large or small sheep
-        if(this.attribute.equalsIgnoreCase("average")){
+        if (this.attribute.equalsIgnoreCase("average")) {
             return decRes.generateIncome();
-        } else if(this.attribute.equalsIgnoreCase("small")) {
+        } else if (this.attribute.equalsIgnoreCase("small")) {
             System.out.println("Farmers have sheered a small sheep for 40 dollars of income");
             return 40;
         } else {

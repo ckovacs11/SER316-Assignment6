@@ -7,6 +7,7 @@ public abstract class ResourceDecorator implements Resource {
     
     public ResourceDecorator(Resource r) {
         this.decRes = r;
+        this.attribute = "";
     }
     
     public int generateIncome() {

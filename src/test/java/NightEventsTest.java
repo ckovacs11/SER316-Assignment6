@@ -1,12 +1,10 @@
 package test.java;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-
-import org.junit.Test;
-
-import main.java.NightEvents;
 import main.java.Farm;
+import main.java.NightEvents;
+import org.junit.Test;
 
 public class NightEventsTest {
     
