@@ -9,9 +9,10 @@ public class NightEvents implements Observer {
     
     private Farm farmUpdate;
     
-    
+    @SuppressWarnings("unchecked")
     @Override
     public void update(Observable farm, Object arg) {
+        
         
         this.farmUpdate = (Farm) farm;
         

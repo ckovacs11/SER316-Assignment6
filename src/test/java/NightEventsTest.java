@@ -1,6 +1,6 @@
 package test.java;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import main.java.Farm;
 import main.java.NightEvents;
@@ -24,9 +24,9 @@ public class NightEventsTest {
 
     @Test
     public void testUpdate() {
-        testFarm.setTime(true);
+        testFarm.setTime(false);
         
-        assertTrue(testFarm.getTime());
+        assertFalse(testFarm.getTime());
     }
 
 }
